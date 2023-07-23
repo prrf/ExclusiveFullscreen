@@ -1,0 +1,5 @@
+{
+  "FFlagDebugGraphicsPreferD3D11": "True",
+  "FFlagFixGraphicsQuality": "True",
+  "FFlagHandleAltEnterFullscreenManually": "False",
+}
