@@ -13,9 +13,13 @@ public static class Program
     static void Main()
     {
         logc("Roblox ClientAppSettings.json setup by | termizzle (@terminite)");
+        logc("Select Mode");
+        logc("1. user json");
+        logc("2. default json");
+        int Mode = Convert.ToInt32(Console.ReadLine());
 
         var client = new HttpClient();
-        var response = client.GetAsync("http://setup.roblox.com/version").Result;
+        var response = client.GetAsync("http://setup.rbxcdn.com/version.txt").Result;
         var content = response.Content.ReadAsStringAsync().Result;
         logc("Current Roblox version: "+content+"\n");
 
@@ -39,7 +43,8 @@ public static class Program
 
             using (var client2 = new WebClient())
             {
-                client2.DownloadFile("https://cdn.discordapp.com/attachments/786964016546709514/1132097819969343558/ClientAppSettings.json", roblox_dir + @"\ClientSettings\ClientAppSettings.json");
+                
+                client2.DownloadFile("https://raw.githubusercontent.com/prrf/ExclusiveFullscreen/main/ClientAppSettings/ClientAppSettings.json", roblox_dir + @"\ClientSettings\ClientAppSettings.json");
                 logc("Downloaded ClientAppSettings.json");
             }
         }
